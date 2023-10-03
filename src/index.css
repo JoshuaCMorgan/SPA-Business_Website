@@ -33,7 +33,7 @@ Variables
   --clr-white: #fff;
   --ff-primary: "Lato", sans-serif;
   --transition: all 0.3s linear;
-  --spacing: 0.25rem;
+  --spacing: 0.2rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -118,4 +118,490 @@ p {
   h4 {
     line-height: 1;
   }
+}
+
+.btn {
+  text-transform: uppercase;
+  color: var(--clr-white);
+  background: var(--clr-primary-5);
+  padding: 0.735rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+}
+.btn:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+}
+
+/* navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-icons {
+  display: none;
+}
+
+/* logo and hamburger on opposite sides */
+.nav-center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-toggle {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* 
+transition works with padding of media screen setting.
+our initial setting is 1rem 2rem
+when screen gets 992, it will transition to 0 0.
+*/
+.nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+  color: var(--clr-grey-1);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+  padding-left: 1.5rem;
+}
+
+/* 
+=========================
+Nav Toggle Functionality
+==========================
+
+*/
+
+.links-container {
+  overflow: hidden;
+  transition: var(--transition);
+  background-color: var(--white-transparent);
+}
+
+.links a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--clr-grey-1);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  transition: var(--transition);
+}
+
+.links a:hover {
+  background: var(--clr-primary-6);
+  color: var(--clr-grey-10);
+  padding-left: 1.5rem;
+}
+
+/* nav at screen size greater than 992px */
+@media screen and (min-width: 992px) {
+  .nav-toggle {
+    display: none;
+  }
+  .links-container {
+    height: auto !important;
+    padding: 5px;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .links a {
+    padding: 0;
+  }
+
+  .links a:hover {
+    background: transparent;
+    padding-left: 0;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* doesn't seem to matter */
+  .nav-header {
+    padding: 0 0;
+  }
+
+  .nav-link {
+    padding: 0 0;
+    margin-right: 0.7rem;
+  }
+
+  .nav-link:hover {
+    padding: 0;
+    /* color: var(--clr-primary-5); */
+    background: transparent;
+  }
+
+  .nav-icons {
+    display: flex;
+  }
+
+  .nav-icon {
+    color: var(--clr-primary-5);
+    font-size: 1.2rem;
+    margin-right: 0.7rem;
+    transition: var(--transition);
+  }
+
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
+
+/* 
+==========
+    HERO
+==========
+*/
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(5, 180, 207, 0.5), rgba(0, 0, 0, 0.2)),
+    url("./assets/images/main.jpg") center/cover no-repeat;
+}
+
+.hero-banner {
+  padding: 0 3rem;
+  color: var(--clr-white);
+  text-align: center;
+}
+.hero-banner h1 {
+  text-transform: uppercase;
+}
+
+.hero-banner span {
+  color: var(--clr-primary-6);
+}
+
+.hero-banner p {
+  max-width: 35rem;
+  margin: 5rem auto 3rem;
+  color: var(--clr-white);
+}
+
+.hero-btn {
+  padding: 0.9rem 1.6rem;
+  font-size: 1.25rem;
+  background: var(--clr-white);
+  color: var(--clr-primary-5);
+}
+
+.hero-btn:hover {
+  background: transparent;
+  color: var(--clr-white);
+  border-color: var(--clr-white);
+}
+
+/* 
+========
+SECTION
+========
+*/
+
+.section {
+  padding: 5rem 0;
+  scroll-margin-top: 4rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  text-transform: uppercase;
+}
+
+.section-title span {
+  color: var(--clr-primary-5);
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+/* 
+===============
+     ABOUT
+===============
+*/
+
+.about-img,
+.about-info {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .about-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  .about-img,
+  .about-info {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .about-img::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    top: -1.5rem;
+    left: -1.5rem;
+    border: 0.5rem solid var(--clr-primary-5);
+  }
+  .about-img {
+    position: relative;
+  }
+  .about-photo {
+    position: relative;
+  }
+}
+
+/* 
+=============
+SERVICES
+==============
+*/
+.services {
+  background: var(--clr-grey-10);
+}
+.service {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.service-icon {
+  background-color: var(--clr-primary-5);
+  color: var(--clr-primary-1);
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.service-text {
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 576px) {
+  .services-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .service {
+    margin-bottom: 0rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .services-center {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .service {
+    display: flex;
+    text-align: left;
+  }
+
+  .service-icon {
+    align-self: start;
+  }
+
+  .service-info {
+    padding-left: 1rem;
+  }
+  .service-title {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* 
+============
+PACKAGES
+============
+*/
+
+.package-card {
+  background: var(--clr-grey-10);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.package-card:hover {
+  box-shadow: var(--dark-shadow);
+  transform: scale(1.02);
+}
+
+/* By setting this parent to relative position, any children with absolute position can be absolutely positioned by the confines of this parent block */
+.package-img-container {
+  position: relative;
+}
+
+.package-type {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-transform: capitalize;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0;
+  background-color: var(--clr-primary-5);
+  color: var(--clr-grey-1);
+}
+
+/* since we are limiting height, the image will compact. "cover" allows us to keep proper aspect ration, but it does cut off excess  */
+.package-img {
+  height: 15rem;
+  object-fit: cover;
+}
+
+.package-info {
+  padding: 1.25rem;
+}
+
+.package-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+
+.package-title {
+  text-align: center;
+}
+
+.package-footer span {
+  margin-right: 0.5rem;
+}
+
+.package-footer p {
+  margin-bottom: 0;
+  color: var(--clr-primary-5);
+}
+
+@media screen and (min-width: 768px) {
+  .featured-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .featured-center {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* 
+===========
+FOOTER
+===========
+*/
+
+.footer {
+  background-color: var(--clr-grey-1);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.footer-links,
+.footer-icons {
+  display: flex;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.footer-link {
+  color: var(--clr-white);
+
+  text-transform: capitalize;
+  margin-right: 1.25rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+
+.footer-link:hover {
+  color: var(--clr-primary-5);
+}
+
+.footer-icons {
+  color: var(--clr-white);
+  font-size: 1.25rem;
+  justify-content: center;
+}
+.footer-icon {
+  margin-right: 1.25rem;
+  transition: var(--transition);
+}
+
+.footer-icon:hover {
+  color: var(--clr-primary-5);
+}
+
+.copyright {
+  color: var(--clr-white);
+  text-align: center;
+  text-transform: capitalize;
+
+  letter-spacing: var(--spacing);
 }
